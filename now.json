@@ -1,0 +1,35 @@
+{
+  "version": 2,
+  "builds": [{
+      "src": "./services/backend/**/*.ts",
+      "use": "@now/node@canary"
+    },
+    {
+      "src": "./services/frontend/package.json",
+      "use": "@now/static-build"
+    },
+    {
+      "src": "./services/static/**/*",
+      "use": "@now/static"
+    }
+
+  ],
+  "env": {
+    "IS_NOW": "true"
+  },
+  "alias": ["designsystems.cloud"],
+  "routes": [{
+      "src": "/api/(.*)",
+      "dest": "/services/backend/$1"
+    },
+    {
+      "src": "/static/(.*)",
+      "dest": "/services/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/services/frontend/$1"
+    }
+
+  ]
+}

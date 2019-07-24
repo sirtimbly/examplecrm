@@ -1,0 +1,5 @@
+node_modules/
+services/frontend/dist
+
+**/.cache
+**/.env*

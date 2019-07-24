@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="{{#if language}}{{language}}{{else}}en{{/if}}" dir="ltr">
+{{#block "head"}}
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  {{#block "meta"}}
+  {{> meta}}
+  {{/block}}
+
+
+  {{#block "title"}}
+  <title>{{title}}</title>
+  {{/block}}
+
+  {{#block "styles"}}
+    {{#each stylesheets}}
+    <link href="{{this}}" rel="stylesheet" />
+    {{/each}}
+  {{/block}}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/styles/base.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Open+Sans:300,400,700" rel="stylesheet">
+
+</head>
+{{/block}}
+
+{{#block "body"}}
+<body class="{{bodyclass}}">
+
+  {{#block "header"}}
+  {{> header}}
+  {{/block}}
+
+  <div class="p-3 container">
+  {{#block "main"}}
+  {{/block}}
+  </div>
+
+  {{#block "footer"}}
+  {{> footer}}
+  {{/block}}
+
+  {{#block "scripts"}}
+  {{#each scripts}}
+  <script defer src="{{this}}"></script>
+  {{/each}}
+  {{/block}}
+</body>
+{{/block}}
+
+</html>

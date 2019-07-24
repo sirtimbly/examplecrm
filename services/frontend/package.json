@@ -1,0 +1,123 @@
+{
+  "name": "designsystems-frontend",
+  "private": true,
+  "version": "0.1.0",
+  "description": "frets-starter-project",
+  "main": "app.ts",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "start": "unite \"parcel serve src/**/*.hbs --no-cache\" \"frets-styles-generator -w src/styles/\"",
+    "build:prod": "frets-styles-generator src/styles/ -p && parcel build src/**/*.hbs --no-cache --public-url ./",
+    "serve": "serve",
+    "now-build": "npm run build:prod",
+    "now-dev": "start",
+    "test": "",
+    "css": "postcss base.css -c postcss.config.js -o dist/base.css",
+    "css:watch": "postcss base.css -c postcss.config.js -o dist/base.css --watch",
+    "styles-generate": "frets-styles-generator styles/base.css styles/base-styles.ts",
+    "styles-generate:watch": "frets-styles-generator styles/base.css styles/base-styles.ts -w",
+    "css:minify": "postcss dist/base.css -u cssnano --no-map -o dist/base.min.css"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/test/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleDirectories": [
+      "node_modules",
+      "bower_components",
+      "shared"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "tsconfig.json"
+      }
+    }
+  },
+  "cssnano": {
+    "preset": [
+      "default",
+      {
+        "discardComments": {
+          "removeAll": true
+        }
+      }
+    ]
+  },
+  "alias": {
+    "ui": "ui/",
+    "styles": "styles/"
+  },
+  "author": "Tim Bendt",
+  "license": "MIT",
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^1.2.0",
+    "@gunar/unite": "^1.2.3",
+    "@pika/web": "^0.4.3",
+    "@types/change-case": "^2.3.1",
+    "@types/cssnano": "^4.0.0",
+    "@types/date-fns": "^2.6.0",
+    "@types/html-webpack-plugin": "^3.2.0",
+    "@types/node": "^11.13.18",
+    "@types/node-fetch": "^2.1.6",
+    "@types/webpack": "^4.4.24",
+    "@types/webpack-bundle-analyzer": "^2.13.0",
+    "@types/webpack-dev-server": "^3.1.1",
+    "change-case": "^3.1.0",
+    "copy-webpack-plugin": "4.6.0",
+    "cross-env": "5.2.0",
+    "cssnano": "4.1.8",
+    "frets-styles-generator": "^1.2.0",
+    "handlebars": "^4.0.5",
+    "html-webpack-plugin": "^3.2.0",
+    "ignore-loader": "^0.1.2",
+    "maquette-css-transitions": "^1.1.0",
+    "maquette-query": "^0.11.7",
+    "metalsmith-layouts": "^1.4.1",
+    "metalsmith-markdown": "^0.2.1",
+    "metalsmith-permalinks": "^0.5.0",
+    "nodemon": "^1.18.9",
+    "parcel": "^1.12.3",
+    "parcel-bundler": "^1.12.3",
+    "postcss-cli": "6.1.1",
+    "postcss-import": "12.0.1",
+    "postcss-preset-env": "^6.5.0",
+    "purge-from-html": "^1.0.3",
+    "purgecss": "^1.1.0",
+    "purgecss-from-frets": "1.0.3",
+    "source-map-loader": "^0.2.4",
+    "tailwindcss": "^1.0.4",
+    "ts-loader": "5.3.3",
+    "ts-node": "^7.0.1",
+    "tslint": "5.12.1",
+    "typescript": "^3.2.4",
+    "webpack": "^4.29.1",
+    "webpack-bundle-analyzer": "^3.0.3",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14",
+    "webpack-dev-server-qr-code": "^1.0.2"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "date-fns": "^2.0.0-alpha.27",
+    "frets": "^1.0.0-beta.3",
+    "immer": "^3.1.3",
+    "just-animate": "^2.6.2",
+    "maquette": "^3.3.4",
+    "metalsmith-copy": "^0.4.1",
+    "mongodb-stitch-browser-sdk": "^4.5.0",
+    "mongodb-stitch-core-sdk": "^4.5.0",
+    "parcel-plugin-handlebars": "^0.4.4",
+    "serve": "^11.0.2"
+  }
+}

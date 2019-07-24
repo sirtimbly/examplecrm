@@ -1,0 +1,20 @@
+{
+  "name": "examplecrm",
+  "private": true,
+  "version": "0.1.0",
+  "description": "example crm",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "dev": "nodemon --exec \"ts-node $1\""
+  },
+  "author": "Tim Bendt - Systematic UI",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "hyperx": "^2.5.4"
+  }
+}
