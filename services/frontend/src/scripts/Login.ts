@@ -1,11 +1,15 @@
-import {client} from "./auth";
+
 import { $, $$ } from "../styles/base-styles";
 import AppProps, { IUser } from "./models/AppProps";
 import { HPanel, VPanel } from "./components/Panels";
 import { $input } from "./components/input";
-import { UserPasswordCredential } from "mongodb-stitch-core-sdk";
+
 import { IFunFrets } from "frets";
 import AuthProps from "./models/AuthProps";
+
+
+const client = window["stitchClient"] as StitchAppClient;
+const credentials = window["stitchCredential"];
 
 export const renderLogin = (f: IFunFrets<AuthProps>) => {
   const username = f.registerField("username", "");
@@ -13,7 +17,7 @@ export const renderLogin = (f: IFunFrets<AuthProps>) => {
   const login = f.registerAction("login", (e: Event, present) => {
     e.preventDefault();
     console.log("login");
-    const credential = new UserPasswordCredential(username.value, password.value);
+    const credential = credentials(username.value, password.value);
 
     client.auth.loginWithCredential(credential)
       .then((authedUser) => {

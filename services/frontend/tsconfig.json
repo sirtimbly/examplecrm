@@ -10,10 +10,11 @@
         "target": "es6",
         "lib": [
             "es6",
-            "dom"
+            "dom",
         ],
         "types": [
-            "node"
+            "node",
+            "src/scripts/data.ts"
         ],
         "baseUrl": "./",
         "experimentalDecorators": false,

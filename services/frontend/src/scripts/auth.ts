@@ -1,17 +1,11 @@
 import { setup, VNode } from "frets";
-import {
-  Stitch,
-  UserPasswordCredential,
-} from "mongodb-stitch-browser-sdk";
+
 
 import AuthProps from "./models/AuthProps";
 import { renderLogin } from "./Login";
-import { renderUserMenu } from "./UserMenu";
-import DataService from "./db";
 import { $ } from "../styles/base-styles";
 
-export const client = Stitch.initializeDefaultAppClient(process.env.CLIENT_ID || "example_crm-nzdxc");
-export const db: DataService = new DataService(client);
+
 const starting = new AuthProps();
 starting.user = JSON.parse(window.localStorage.getItem("user")) || undefined;
 

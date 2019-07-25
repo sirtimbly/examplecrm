@@ -17,19 +17,19 @@ module.exports = {
     //   stage: 1,
     //   browsers: 'last 2 versions'
     // }),
-    // purgecss({
-    //   content: ['./src/scripts/**/*.ts', './src/**/.html', './src/markup/**/*.hbs'],
-    //   extractors: [{
-    //     extractor: purgeFromFrets,
-    //     extensions: ["ts"]
-    //   }, {
-    //     extractor: purgeHtml,
-    //     extensions: ['html', 'hbs']
-    //   }],
-    //   whitelist: ['html', 'body', 'input', 'button', 'select'],
-    //   whitelistPatterns: [/icon/, /white/, /gray/, /fade/],
-    //   rejected: true
-    // })
+    purgecss({
+      content: ['./src/scripts/**/*.ts', './src/**/.html', './src/**/.vue', './src/markup/**/*.hbs'],
+      extractors: [{
+        extractor: purgeFromFrets,
+        extensions: ["ts"]
+      }, {
+        extractor: purgeHtml,
+        extensions: ['html', 'hbs', 'vue']
+      }],
+      whitelist: ['html', 'body', 'input', 'button', 'select'],
+      whitelistPatterns: [/icon/, /white/, /gray/, /fade/],
+      rejected: true
+    })
     // cssnano({
     //   preset: 'default',
     // })

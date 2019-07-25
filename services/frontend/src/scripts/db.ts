@@ -2,41 +2,32 @@
 import {
   RemoteMongoClient,
   StitchAppClient,
-  RemoteInsertOneResult,
   RemoteMongoDatabase,
   RemoteMongoCollection,
 } from "mongodb-stitch-browser-sdk";
-import IProject from "./models/IProject";
-import { IVisualTest } from "./models/AppProps";
 
-const projectKey: string = "projects";
-const testKey: string = "visualTests";
+import { IVisualTest } from "./models/AppProps";
+import { IContact } from "./models/IContact";
+
+const contactsKey: string = "contacts";
 
 export default class DataService {
   private db: RemoteMongoDatabase;
-  private projects: RemoteMongoCollection<IProject>;
-  private tests: RemoteMongoCollection<IVisualTest>;
+  private contacts: RemoteMongoCollection<IContact>;
   constructor(private client: StitchAppClient) {
     this.db = client.getServiceClient(RemoteMongoClient.factory, "mongodb-atlas").db("crm");
-    this.projects = this.db.collection<IProject>(projectKey);
-    this.tests = this.db.collection<IVisualTest>(testKey);
+    this.contacts = this.db.collection<IContact>(contactsKey);
   }
 
-  public listProjects = (limit: number = 100) => this.projects
-    .find({owner_id: this.client.auth.user.id}, { limit }).asArray()
+  public listContacts = (limit: number = 100) => this.contacts
+    .find({}, { limit }).asArray()
 
-  public createProject = (name: string, template: string) => this.projects.insertOne({
-    owner_id: this.client.auth.user.id,
-    template,
-    name,
+  public createContact = (contact: IContact) => this.contacts.insertOne({
+    ...contact
   })
 
-  public deleteProject = (project: IProject) => this.projects.deleteOne({
-    id: {$eq: project._id },
+  public deleteContact = (contact: IContact) => this.contacts.deleteOne({
+    id: {$eq: contact._id },
   })
-
-  public listTests = (ownerId: string) => this.tests.find({
-    owner_id: ownerId,
-  }).asArray()
 
 }
