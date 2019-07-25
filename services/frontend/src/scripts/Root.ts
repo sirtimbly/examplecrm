@@ -2,7 +2,7 @@ import { $, $$ } from "../styles/base-styles";
 
 import { VNode } from "maquette";
 
-import { App } from "./";
+import { App } from "./app";
 import AppProps from "./models/AppProps";
 import { RouteKeys, IRouteKeys } from "./navigation";
 import { renderAbout } from "./About";

@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "name": "examplecrm",
   "builds": [{
       "src": "./services/backend/**/*.ts",
       "use": "@now/node@canary"

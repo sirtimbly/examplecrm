@@ -17,7 +17,7 @@ export default class DataService {
   private projects: RemoteMongoCollection<IProject>;
   private tests: RemoteMongoCollection<IVisualTest>;
   constructor(private client: StitchAppClient) {
-    this.db = client.getServiceClient(RemoteMongoClient.factory, "mongodb-atlas").db("designsystems");
+    this.db = client.getServiceClient(RemoteMongoClient.factory, "mongodb-atlas").db("crm");
     this.projects = this.db.collection<IProject>(projectKey);
     this.tests = this.db.collection<IVisualTest>(testKey);
   }

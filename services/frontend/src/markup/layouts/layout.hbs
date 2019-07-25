@@ -27,10 +27,10 @@
 {{/block}}
 
 {{#block "body"}}
-<body class="{{bodyclass}}">
+<body class="{{bodyclass}} w-screen h-screen flex flex-row items-stretch">
 
-  {{#block "header"}}
-  {{> header}}
+  {{#block "sidebar"}}
+  {{> sidebar}}
   {{/block}}
 
   <div class="p-3 container">
@@ -38,9 +38,7 @@
   {{/block}}
   </div>
 
-  {{#block "footer"}}
-  {{> footer}}
-  {{/block}}
+
 
   {{#block "scripts"}}
   {{#each scripts}}

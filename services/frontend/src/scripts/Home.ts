@@ -6,7 +6,7 @@ import { Table } from "./components/Tables";
 
 import produce from "immer";
 
-import { App, db } from ".";
+import { App, db } from "./app";
 import AppProps from "./models/AppProps";
 import IProject from "./models/IProject";
 import { createProjectPanel } from "./NewProject";

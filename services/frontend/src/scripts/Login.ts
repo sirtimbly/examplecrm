@@ -1,5 +1,4 @@
-
-import { App, client } from "./index";
+import {client} from "./auth";
 import { $, $$ } from "../styles/base-styles";
 import AppProps, { IUser } from "./models/AppProps";
 import { HPanel, VPanel } from "./components/Panels";

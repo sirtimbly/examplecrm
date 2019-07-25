@@ -1,6 +1,5 @@
 
-import { AppActions } from "../../actions/AppActions";
-import { App } from ".";
+import { App } from "./app";
 import AppProps from "./models/AppProps";
 
 export type SampleScreens = keyof IRouteKeys;

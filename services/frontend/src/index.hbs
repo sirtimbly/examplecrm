@@ -2,14 +2,21 @@
 language: en
 title: "Home"
 scripts:
+  - scripts/auth.ts
 
 ---
 
 {{#extend "layout"}}
+{{#content "sidebar"}}
+  <div class="bg-white p-3 shadow-2xl">...</div>
+{{/content}}
   {{#content "main"}}
-
-  <h1>Home: Project List</h1>
-  <div id="mainapp" class="mx-auto p-2"></div>
+  <div class="p3">
+    <h1>Welcome to our Example App</h1>
+    <div id="authentication" class="mx-auto p-2">
+      <div class="panel p-1 text-left overflow-auto my-2 shadow rounded flex flex-col">Loading</div>
+    </div>
+  </div>
 
   {{/content}}
 {{/extend}}
