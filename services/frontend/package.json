@@ -80,7 +80,7 @@
     "cssnano": "^4.1.10",
     "frets-styles-generator": "^1.2.0",
     "front-matter": "^2.3.0",
-    "handlebars": "^4.0.11",
+    "handlebars": "^4.5.3",
     "handlebars-helpers": "^0.10.0",
     "handlebars-layouts": "^3.1.4",
     "handlebars-wax": "^6.1.0",
