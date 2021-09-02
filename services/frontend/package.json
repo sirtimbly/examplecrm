@@ -119,7 +119,7 @@
     "date-fns": "^2.0.0-alpha.27",
     "element-ui": "^2.11.0",
     "frets": "^1.0.0-beta.3",
-    "immer": "^3.1.3",
+    "immer": "^9.0.6",
     "just-animate": "^2.6.2",
     "maquette": "^3.3.4",
     "metalsmith-copy": "^0.4.1",
